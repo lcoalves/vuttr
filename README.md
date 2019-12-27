@@ -30,7 +30,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-$> git clone https://github.com/lcoalves/gympoint-backend.git
+$> git clone https://github.com/lcoalves/vuttr-backend.git
 ```
 
 ### Installing
@@ -46,7 +46,7 @@ $> docker-compose up -d
 #### Back-end
 First install back-end dependencies
 ```
-$> cd gympoint-backend && yarn
+$> cd vuttr-backend && yarn
 ```
 Start back-end service
 ```
@@ -64,16 +64,12 @@ $> yarn dev
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/lcoalves/gympoint-backend/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/lcoalves/vuttr-backend/blob/master/LICENSE) file for details
 
 ## Acknowledgments
 
-* ExpressJS
+* AdonisJS
 * MVC design pattern
-* Sequelize ORM
-* Background mail sendling with Redis
-* Sentry
-* Multer
 * JWT
 * Docker
 * ESLint
