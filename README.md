@@ -22,7 +22,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 - [NodeJS](https://nodejs.org/en/) - Environment runtime
-- [Adonisjs](https://adonisjs.com/docs/4.1/installation) - Backend framework
 - [Yarn](https://yarnpkg.com/en/docs/install) - Packager manager
 - [Docker](https://docs.docker.com/install/) - Make it easier to create, deploy, and run applications by using containers
 - [Docker Compose](https://docs.docker.com/compose/install/) - Relies on Docker Engine for any meaningful work, so make sure you have Docker Engine installed either locally or remote, depending on your setup.
@@ -43,6 +42,12 @@ First thing you must do is setup all your database settings. To do it, I have cr
 $> docker-compose up -d
 ```
 
+#### AdonisJS
+Installing AdonisJs is a simple process and will only take a few minutes. Install it globally via npm like so:
+```
+$> npm i -g @adonisjs/cli
+```
+
 #### Back-end
 First install back-end dependencies
 ```
@@ -55,7 +60,7 @@ $> yarn dev
 
 ## Built With
 
-* [Express](https://expressjs.com/pt-br/) - A restful API framework
+* [AdonisJS](https://adonisjs.com/docs/4.1/installation) - A restful API framework
 
 
 ## Authors
