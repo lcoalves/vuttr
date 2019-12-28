@@ -53,15 +53,45 @@ First install back-end dependencies
 ```
 $> cd vuttr-backend && yarn
 ```
+Run migrations
+```
+$> adonis migration:run
+```
+Run seeds (automatically create a user 'admin@vuttr.com' and password '123456')
+```
+$> adonis seed
+```
 Start back-end service
 ```
 $> yarn dev
 ```
 
+#### Back-end (Running TESTS)
+First run
+```
+$> adonis test
+```
+After run tests if you want to run backend app
+```
+$> adonis migration:run
+```
+
+#### Authentication (JWT)
+**1.** Send a post to route '/sessions';
+**2.** Send 'email' (admin@vuttr.com) and 'password' (123456) on body;
+**3.** You will receive the JWT authentication token.
+```
+POST:
+'/sessions'
+{
+  email: 'admin@vuttr.com',
+  password: '123456'
+}
+```
+
 ## Built With
 
 * [AdonisJS](https://adonisjs.com/docs/4.1/installation) - A restful API framework
-
 
 ## Authors
 
