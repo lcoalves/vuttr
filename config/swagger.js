@@ -34,10 +34,9 @@ module.exports = {
           // define your scopes here
           // remove read, write and admin if not necessary
           scopes: {
-            read: 'Grants read access (this is just sample)',
-            write: 'Grants write access (this is just sample)',
-            admin:
-              'Grants read and write access to administrative information (this is just sample)',
+            read: 'Grants read access',
+            write: 'Grants write access',
+            admin: 'Grants read and write access to administrative information',
           },
         },
       },
