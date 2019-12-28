@@ -1,5 +1,3 @@
-'use strict';
-
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
@@ -11,6 +9,28 @@ const Tool = use('App/Models/Tool');
  * Resourceful controller for interacting with tools
  */
 class ToolController {
+  /**
+   * @swagger
+   * /tools:
+   *   get:
+   *     tags:
+   *       - Tools
+   *     summary: List all tools
+   *     parameters:
+   *       - name: tag
+   *         description: A tag for search the tool
+   *         in: query
+   *         required: false
+   *         type: string
+   *     responses:
+   *       200:
+   *         description: A list of tools
+   *         schema:
+   *          type: array
+   *          items:
+   *            $ref: '#/definitions/Tool'
+   */
+
   /**
    * Show a list of all tools.
    * GET tools
@@ -35,6 +55,43 @@ class ToolController {
 
     return tool;
   }
+
+  /**
+   * @swagger
+   * /tools:
+   *   post:
+   *     tags:
+   *       - Tools
+   *     summary: Create a new tool
+   *     parameters:
+   *       - name: title
+   *         description: A title for the tool
+   *         in: body
+   *         required: true
+   *         type: string
+   *       - name: link
+   *         description: A link for the tool
+   *         in: body
+   *         required: true
+   *         type: string
+   *       - name: description
+   *         description: A description for the tool
+   *         in: body
+   *         required: true
+   *         type: string
+   *       - name: tags
+   *         description: Tags for the tool
+   *         in: body
+   *         required: true
+   *         type: array
+   *     responses:
+   *       201:
+   *         description: Created
+   *         schema:
+   *          type: array
+   *          items:
+   *            $ref: '#/definitions/Tool'
+   */
 
   /**
    * Create/save a new tool.
@@ -80,6 +137,24 @@ class ToolController {
   }
 
   /**
+   * @swagger
+   * /tools/:id:
+   *   delete:
+   *     tags:
+   *       - Tools
+   *     summary: Remove a tool by id
+   *     parameters:
+   *       - name: id
+   *         description: A id for search and remove the tool
+   *         in: query
+   *         required: true
+   *         type: string
+   *     responses:
+   *       204:
+   *         description: OK
+   */
+
+  /**
    * Delete a tool with id.
    * DELETE tools/:id
    *
@@ -87,16 +162,17 @@ class ToolController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
+  // eslint-disable-next-line consistent-return
   async destroy({ params, response }) {
     try {
-    const tool = await Tool.findOrFail(params.id);
+      const tool = await Tool.findOrFail(params.id);
 
-    await tool.delete();
+      await tool.delete();
     } catch (err) {
       return response.status(400).send({
         title: 'Falha!',
-        message: 'Houve um erro durante a remoção.'
-      })
+        message: 'Houve um erro durante a remoção.',
+      });
     }
   }
 }
