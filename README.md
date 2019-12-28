@@ -39,7 +39,11 @@ $> git clone https://github.com/lcoalves/vuttr-backend.git
 A step by step series of examples that tell you how to get a development env running
 
 #### Databases
-First thing you must do is setup all your database settings. To do it, I have created a docker-compose.yml file do help you
+First install back-end dependencies
+```
+$> cd vuttr-backend && yarn
+```
+Next thing you must do is setup all your database settings. To do it, I have created a docker-compose.yml file do help you
 ```
 $> docker-compose up -d
 ```
@@ -51,10 +55,6 @@ $> npm i -g @adonisjs/cli
 ```
 
 #### Back-end
-First install back-end dependencies
-```
-$> cd vuttr-backend && yarn
-```
 Run migrations
 ```
 $> adonis migration:run
