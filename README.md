@@ -6,7 +6,7 @@
   Desafio Bossabox: Vuttr - O projeto é um sistema backend e web simples, para visualização, inclusão e remoção de ferramentas de desenvolvimento. Nesse repositório você encontrará toda a estrura utilizada para o backend.
 </h3>
 
-<p>See in action: <a href="https://vuttr-lucas-backend.herokuapp.com/tools"></a>click here</p>
+<p align="center">See in action: <a href="https://vuttr-lucas-backend.herokuapp.com/tools">click here</a></p>
 
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/lcoalves/vuttr-backend?color=%2304D361">
