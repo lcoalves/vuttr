@@ -77,9 +77,9 @@ $> adonis migration:run
 ```
 
 #### Authentication (JWT)
-**1.** Send a post to route '/sessions';
-**2.** Send 'email' (admin@vuttr.com) and 'password' (123456) on body;
-**3.** You will receive the JWT authentication token.
+* Send a post to route '/sessions';
+* Send 'email' (admin@vuttr.com) and 'password' (123456) on body;
+* You will receive the JWT authentication token.
 ```
 POST:
 '/sessions'
