@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
@@ -41,13 +42,24 @@ class ToolController {
    * @param {View} ctx.view
    */
   async index({ request }) {
-    const { page, tag } = request.get();
+    const { page, search_tags_only, tag } = request.get();
+
+    const tags_only = JSON.parse(search_tags_only);
 
     const tool = await Tool.query()
       .with('tags')
       .whereHas('tags', builder => {
         if (tag) {
           builder.whereRaw("LOWER(name) like '%' || LOWER(?) || '%'", tag);
+        }
+      })
+      .orWhere(function() {
+        if (!tags_only && tag) {
+          this.whereRaw("LOWER(title) like '%' || LOWER(?) || '%'", tag);
+          this.orWhereRaw(
+            "LOWER(description) like '%' || LOWER(?) || '%'",
+            tag
+          );
         }
       })
       .orderBy('id')
